@@ -10,36 +10,36 @@ import com.sun.management.OperatingSystemMXBean;
 public class ProjectsPerformanceTests {
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        FileWriter create_project_time_file = new FileWriter("projects_csv_for_graphs/create_project_time.csv");
+        FileWriter create_project_time_file = new FileWriter("projects_csv/create_project_time.csv");
         create_project_time_file.append("Number Objects, Time (ms)\n");
 
-        FileWriter create_project_cpu_usage = new FileWriter("projects_csv_for_graphs/create_project_cpu.csv");
+        FileWriter create_project_cpu_usage = new FileWriter("projects_csv/create_project_cpu.csv");
         create_project_cpu_usage.append("Number Objects, CPU Usage\n");
 
-        FileWriter create_project_memory_usage = new FileWriter("projects_csv_for_graphs/create_project_mem.csv");
+        FileWriter create_project_memory_usage = new FileWriter("projects_csv/create_project_mem.csv");
         create_project_memory_usage.append("Number Objects, Memory Usage (MB)\n");
 
-        FileWriter edit_project_time = new FileWriter("projects_csv_for_graphs/edit_project_time.csv");
+        FileWriter edit_project_time = new FileWriter("projects_csv/edit_project_time.csv");
         edit_project_time.append("Number Objects, Time (ms)\n");
 
-        FileWriter edit_project_cpu_usage = new FileWriter("projects_csv_for_graphs/edit_project_cpu.csv");
+        FileWriter edit_project_cpu_usage = new FileWriter("projects_csv/edit_project_cpu.csv");
         edit_project_cpu_usage.append("Number Objects, CPU Usage\n");
 
-        FileWriter edit_project_memory_usage = new FileWriter("projects_csv_for_graphs/edit_project_mem.csv");
+        FileWriter edit_project_memory_usage = new FileWriter("projects_csv/edit_project_mem.csv");
         edit_project_memory_usage.append("Number Objects, Memory Usage (MB)\n");
 
-        FileWriter delete_project_time = new FileWriter("projects_csv_for_graphs/delete_project_time.csv");
+        FileWriter delete_project_time = new FileWriter("projects_csv/delete_project_time.csv");
         delete_project_time.append("Number Objects, Time (ms)\n");
 
-        FileWriter delete_project_cpu_usage = new FileWriter("projects_csv_for_graphs/delete_project_cpu.csv");
+        FileWriter delete_project_cpu_usage = new FileWriter("projects_csv/delete_project_cpu.csv");
         delete_project_cpu_usage.append("Number Objects, CPU Usage\n");
 
-        FileWriter delete_project_memory_usage = new FileWriter("projects_csv_for_graphs/delete_project_mem.csv");
+        FileWriter delete_project_memory_usage = new FileWriter("projects_csv/delete_project_mem.csv");
         delete_project_memory_usage.append("Number Objects, Memory Usage (MB)\n");
 
         OperatingSystemMXBean osBean = ManagementFactory.getPlatformMXBean(OperatingSystemMXBean.class);
         int number_objects = 1;
-        Projects projects = new Projects();
+        ProjectsUnitTests projects = new ProjectsUnitTests();
 
         for (int i = 0; i < 100; i++) {
             long start_time_create;
